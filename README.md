@@ -71,6 +71,91 @@ This is a FastAPI-based application implementing OAuth2 authentication with Goog
 
        - GET /users - Retrieve all registered users.
 
+## API Examples
+
+### User Registration
+```bash
+curl -X POST https://authentication-fastapi.onrender.com/resister \
+  -H "Content-Type: application/json" \
+  -d '{
+    "userName": "testuser",
+    "name": "Test User",
+    "email": "milanbhuyan7@gmail.com",
+    "password": "password123"
+  }'
+```
+
+### User Login
+```bash
+curl -X POST https://authentication-fastapi.onrender.com/login \
+  -d "username=testuser&password=password123"
+```
+
+### Get All Users
+```bash
+curl -H "Authorization: Bearer <your_access_token>" \
+  https://authentication-fastapi.onrender.com/users
+```
+
+### Google OAuth Login
+1. Visit `GET /google-login` to redirect to Google OAuth.
+2. After authorization, Google redirects to `GET /auth/google?code=<code>` which returns an access token.
+
+### GitHub OAuth Login
+1. Visit `GET /github-login` to redirect to GitHub OAuth.
+2. After authorization, GitHub redirects to `GET /auth/callback?code=<code>` which returns an access token.
+
+### MCP JSON-RPC Endpoints
+The app supports MCP-compatible JSON-RPC 2.0 endpoints over HTTP at `POST /mcp`.
+
+#### Send Email
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "gmail.send_email",
+  "params": {
+    "to": "milanbhuyan7@gmail.com",
+    "subject": "Test Subject",
+    "body": "Test Body"
+  },
+  "id": 1
+}
+```
+
+#### List Labels
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "gmail.list_labels",
+  "params": {},
+  "id": 2
+}
+```
+
+#### Search Messages
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "gmail.search_messages",
+  "params": {
+    "query": "subject:test"
+  },
+  "id": 3
+}
+```
+
+#### Get Message
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "gmail.get_message",
+  "params": {
+    "id": "message_id_here"
+  },
+  "id": 4
+}
+```
+
 **Contributing**
 
     Contributions are welcome! Please open an issue or submit a pull request."# authentication-fastapi"  
