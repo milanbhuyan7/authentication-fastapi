@@ -2,7 +2,7 @@
 name = "app"
 version = "0.1.0"
 description = ""
-authors = ["devmianharoon <devmianharoon@gmail.com>"]
+authors = ["milanbhuyan7 <milanbhuyan7@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
