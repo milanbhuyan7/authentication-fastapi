@@ -6,5 +6,6 @@ class Users(SQLModel, table=True):
     name: str
     email: str = Field(unique=True)
     password: str
+    google_access_token: str | None = None
     created_at: date = Field(default=datetime.now())
  
