@@ -7,3 +7,4 @@ class Users(SQLModel, table=True):
     email: str = Field(unique=True)
     password: str
     created_at: date = Field(default=datetime.now())
+ 

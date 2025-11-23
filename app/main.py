@@ -166,3 +166,4 @@ def get_all_user(token: str = Depends(oauth2_password_scheme)):
 def start():
     create_tables()
     uvicorn.run("app.main:app", host="127.0.0.1", port=8080, reload=True)
+ 

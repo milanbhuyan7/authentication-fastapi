@@ -74,3 +74,4 @@ This is a FastAPI-based application implementing OAuth2 authentication with Goog
 **Contributing**
 
     Contributions are welcome! Please open an issue or submit a pull request."# authentication-fastapi"  
+ 

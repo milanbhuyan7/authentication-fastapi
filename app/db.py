@@ -6,4 +6,4 @@ connection_string=os.getenv('SQLALCHEMY_DATABASE_URL')
 engine=create_engine(connection_string)
 
 def create_tables():
-    SQLModel.metadata.create_all(engine)
+    SQLModel.metadata.create_all(engine) 
